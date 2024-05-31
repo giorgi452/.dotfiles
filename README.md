@@ -7,4 +7,4 @@ git clone https://github.com/giorgi452/.dotfiles && make
 ```
 
 required packages
-stow, i3, picom, polybar, alacritty, tmux, zsh, rofi
+stow, i3, picom, polybar, alacritty, tmux, zsh, rofi, dunst, nvim, ranger, feh
