@@ -229,6 +229,6 @@ exec firefox
 exec discord
 exec alacritty
 exec dunst
-exec_always $HOME/.config/polybar/launch.sh --shapes 
+exec_always $HOME/.config/polybar/launch.sh bar1 
 exec /usr/bin/lxqt-policykit-agent
 exec --no-startup-id setxkbmap -layout "us,ge" -option "grp:win_space_toggle"
