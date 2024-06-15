@@ -25,7 +25,6 @@ return {
 					"clangd",
 					"gopls",
 					"somesass_ls",
-					"snyk_ls",
 					"typos_lsp",
 					"eslint",
           "intelephense",
@@ -56,7 +55,6 @@ return {
 				"clangd",
 				"gopls",
 				"somesass_ls",
-				"snyk_ls",
 				"typos_lsp",
 				"eslint",
 			}
