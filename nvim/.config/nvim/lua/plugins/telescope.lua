@@ -32,7 +32,7 @@ return {
       require("telescope").setup {
         extensions = {
           file_browser = {
-            -- disables netrw and use telescope-file-browser in its place
+            sorting_strategy = "ascending",
             hijack_netrw = true,
           },
         },
