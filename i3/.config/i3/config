@@ -54,7 +54,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -143,7 +143,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-assign [class="alacritty"] $ws1
+assign [class="kitty"] $ws1
 assign [class="firefox"] $ws2
 assign [class="discord"] $ws3
 assign [class="Spotify"] $ws10
@@ -204,8 +204,17 @@ default_border pixel 4
 default_floating_border pixel 4
 
 # I3lock
-bindsym $mod+shift+x exec i3lock -i ~/Pictures/wallpapers/wallpaper-9.png 
 
+exec_always --no-startup-id xset +dpms dpms 0 300 300 
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock.sh 
+
+bindsym $mod+x mode "lock"
+
+mode "lock" {
+    bindsym l exec i3lock --ignore-empty-password --tiling --image='$HOME/Pictures/wallpapers/wallpaper-9.png' 2>/dev/null, mode "default"
+    # just force suspend. i3lock will be called automatically via lock.sh 
+    bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
+}
 # Application Launcher
 bindsym $mod+d exec $HOME/.config/rofi/bin/launcher
 bindsym $mod+p exec $HOME/.config/rofi/bin/powermenu
@@ -221,7 +230,7 @@ exec_always picom
 exec spotify-launcher
 exec firefox
 exec discord
-exec alacritty
+exec kitty
 exec dunst
 exec_always $HOME/.config/polybar/launch.sh bar1 
 exec /usr/bin/lxqt-policykit-agent
