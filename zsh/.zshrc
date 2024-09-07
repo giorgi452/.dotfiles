@@ -37,4 +37,4 @@ setopt appendhistory
 
 # aliases
 alias vim=nvim
-# alias lf=ranger
+alias lf=yazi
