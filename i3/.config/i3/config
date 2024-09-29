@@ -225,6 +225,11 @@ bindsym Mod4 exec $HOME/.config/rofi/bin/launcher
 bindsym Print exec flameshot screen --clipboard --path /home/$USER/Pictures/
 bindsym Shift+Print exec flameshot gui --clipboard --path /home/$USER/Pictures
 
+bar {
+        status_command i3status
+        tray_output primary
+}
+
 # Startup
 exec_always feh --bg-scale --random $HOME/Pictures/wallpapers/*
 exec_always picom
@@ -233,6 +238,6 @@ exec firefox
 exec discord
 exec kitty
 exec dunst
-exec_always $HOME/.config/polybar/launch.sh bar1 
+# exec_always $HOME/.config/polybar/launch.sh bar1 
 exec /usr/bin/lxqt-policykit-agent
 exec --no-startup-id setxkbmap -layout "us,ge" -option "grp:win_space_toggle"

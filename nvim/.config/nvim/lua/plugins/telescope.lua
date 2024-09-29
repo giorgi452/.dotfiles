@@ -32,8 +32,8 @@ return {
       require("telescope").setup {
         extensions = {
           file_browser = {
-            sorting_strategy = "ascending",
             hijack_netrw = true,
+            find_command = { "ls", "-a", "-1", "--group-directories-first" }
           },
         },
       }
