@@ -11,20 +11,20 @@ order += "memory"
 order += "tztime local"
 
 tztime greeting {
-    format = "I use Arch BTW"
+    format = "I use Arch BTW "
     timezone = "UTC"  # Doesn't matter what timezone is used, we're only using it to display the text
 }
 
 volume master {
-    format = " : %volume"
-    format_muted = " : muted"
+    format = "  : %volume "
+    format_muted = "  : muted "
     device = "default"
     mixer = "Master"
 }
 
 wireless wlo1 {
-        format_up = "  : (%quality at %essid, %bitrate) %ip"
-        format_down = " 󰖪 : down"
+        format_up = "  : (%quality at %essid, %bitrate) %ip "
+        format_down = " 󰖪 : down "
 }
 
 ethernet eth0 {
@@ -33,7 +33,7 @@ ethernet eth0 {
 }
 
 battery 0 {
-        format = "%status %percentage %remaining"
+        format = "%status %percentage %remaining "
         format_down = "No battery"
         status_chr = "⚡ CHR"
         status_bat = "🔋 BAT"
@@ -61,11 +61,6 @@ tztime local {
         format = "%Y-%m-%d %H:%M:%S"
 }
 
-tztime berlin {
-        format = "%Y-%m-%d %H:%M:%S %Z"
-        timezone = "Europe/Berlin"
-}
-
 load {
         format = "%5min"
 }
@@ -76,13 +71,13 @@ cpu_temperature 0 {
 }
 
 memory {
-        format = "%used"
-        threshold_degraded = "10%"
-        format_degraded = "MEMORY: %free"
+        format = "%used "
+        threshold_degraded = "10% "
+        format_degraded = "MEMORY: %free "
 }
 
 disk "/" {
-        format = "%free"
+        format = "%free "
 }
 
 read_file uptime {
