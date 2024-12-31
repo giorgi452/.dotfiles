@@ -29,7 +29,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --show-failed-attempts --ignore-empty-password --tiling --image='/home/giorgi/Pictures/lock-screen.png'
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -44,7 +44,7 @@ smart_borders on
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id amixer set Master mute && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -206,27 +206,23 @@ default_border pixel 0
 default_floating_border pixel 0
 
 # I3lock
-
 exec_always --no-startup-id xset +dpms dpms 0 300 300 
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock.sh 
 
 bindsym $mod+x mode "lock"
 
 mode "lock" {
-    bindsym l exec i3lock --ignore-empty-password --tiling --image='$HOME/Pictures/wallpapers/wallpaper-9.png' 2>/dev/null, mode "default"
+    bindsym l exec i3lock --nofork --show-failed-attempts --ignore-empty-password --tiling --image='/home/giorgi/Pictures/lock-screen.png' 2>/dev/null, mode "default"
     # just force suspend. i3lock will be called automatically via lock.sh 
     bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
 }
 
 # Application Launcher
-# bindsym $mod+d exec $HOME/.config/rofi/bin/launcher
-# bindsym $mod+p exec $HOME/.config/rofi/bin/powermenu
-# bindsym Mod4 exec $HOME/.config/rofi/bin/launcher
 bindsym $mod+d exec dmenu_run 
 
 # Screenshots
-bindsym Print exec flameshot screen --clipboard --path /home/$USER/Pictures/
-bindsym Shift+Print exec flameshot gui --clipboard --path /home/$USER/Pictures
+bindsym Print exec flameshot screen --clipboard --path /home/$USER/Pictures/screenshots/
+bindsym Shift+Print exec flameshot gui --clipboard --path /home/$USER/Pictures/screenshots
 
 bar {
         status_command i3status

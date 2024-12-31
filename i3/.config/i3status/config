@@ -11,8 +11,8 @@ order += "memory"
 order += "tztime local"
 
 tztime greeting {
-    format = "I use Arch BTW "
-    timezone = "UTC"  # Doesn't matter what timezone is used, we're only using it to display the text
+    format = "󰋇  UwU 󰩔 "
+    timezone = "UTC" 
 }
 
 volume master {
@@ -23,8 +23,8 @@ volume master {
 }
 
 wireless wlan0 {
-        format_up = "  : (%quality at %essid, %bitrate) %ip "
-        format_down = " 󰖪 : down "
+        format_up = " : (%quality at %essid, %bitrate) %ip "
+        format_down = "󰖪 : down "
 }
 
 ethernet eth0 {
@@ -35,10 +35,10 @@ ethernet eth0 {
 battery 0 {
         format = "%status %percentage %remaining "
         format_down = "No battery"
-        status_chr = "⚡ CHR"
-        status_bat = "🔋 BAT"
-        status_unk = "? UNK"
-        status_full = "☻ FULL"
+        status_chr = "󰂄 : "
+        status_bat = "󰁽 :"
+        status_unk = "? :"
+        status_full = "󰁹 :"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
 }
@@ -48,17 +48,15 @@ run_watch DHCP {
 }
 
 run_watch VPNC {
-        # file containing the PID of a vpnc process
         pidfile = "/var/run/vpnc/pid"
 }
 
 path_exists VPN {
-        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
         path = "/proc/sys/net/ipv4/conf/tun0"
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = " :  %Y-%m-%d %H:%M:%S"
 }
 
 load {
@@ -71,9 +69,9 @@ cpu_temperature 0 {
 }
 
 memory {
-        format = "%used "
+        format = " : %used "
         threshold_degraded = "10% "
-        format_degraded = "MEMORY: %free "
+        format_degraded = " : %free "
 }
 
 disk "/" {
