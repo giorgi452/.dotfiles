@@ -1,17 +1,18 @@
 general {
         colors = true
         interval = 5
+        color_good = "#3e8fb0"
 }
 
 order += "tztime greeting"
 order += "volume master"
-order += "wireless wlan0"
+order += "wireless wlo1"
 order += "battery 0"
 order += "memory"
 order += "tztime local"
 
 tztime greeting {
-    format = "󰋇  UwU 󰩔 "
+    format = "󰋇 UwU 󰩔 "
     timezone = "UTC" 
 }
 
@@ -22,9 +23,9 @@ volume master {
     mixer = "Master"
 }
 
-wireless wlan0 {
-        format_up = " : (%quality at %essid, %bitrate) %ip "
-        format_down = "󰖪 : down "
+wireless wlo1 {
+        format_up = "  : (%essid, %bitrate) "
+        format_down = " 󰖪 : down "
 }
 
 ethernet eth0 {
@@ -33,14 +34,15 @@ ethernet eth0 {
 }
 
 battery 0 {
-        format = "%status %percentage %remaining "
+        format = " %status %percentage"
         format_down = "No battery"
-        status_chr = "󰂄 : "
-        status_bat = "󰁽 :"
-        status_unk = "? :"
-        status_full = "󰁹 :"
+        status_chr = "󰂄:"
+        status_bat = "󰁽:"
+        status_unk = "?:"
+        status_full = "󰁹:"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
+        last_full_capacity = true
 }
 
 run_watch DHCP {
@@ -56,7 +58,7 @@ path_exists VPN {
 }
 
 tztime local {
-        format = " :  %Y-%m-%d %H:%M:%S"
+        format = " : %Y-%m-%d %H:%M:%S"
 }
 
 load {
@@ -67,6 +69,7 @@ cpu_temperature 0 {
         format = "T: %degrees °C"
         path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
+
 
 memory {
         format = " : %used "
