@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:/home/giorgi/.cargo/bin"
+export PATH="$PATH:/home/giorgi/.cargo/bin:/home/giorgi/.spicetify/"
 
 # Theme
 ZSH_THEME="robbyrussell"
@@ -22,13 +22,14 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
 
 # fzf
-export FZF_DEFAULT_OPTS=" --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
+--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+--color=selected-bg:#45475a \
+--color=border:#313244,label:#cdd6f4"
 source <(fzf --zsh)
 
 HISTFILE=~/.zsh_history
@@ -39,3 +40,4 @@ setopt appendhistory
 # aliases
 alias vim=nvim
 alias lf=yazi
+

@@ -12,7 +12,7 @@ order += "memory"
 order += "tztime local"
 
 tztime greeting {
-    format = "󰋇 UwU 󰩔 "
+    format = " Freedom  "
     timezone = "UTC" 
 }
 
@@ -42,6 +42,7 @@ battery 0 {
         status_full = "󰁹:"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
+        format_percentage = "%.00f%s"
         last_full_capacity = true
 }
 
