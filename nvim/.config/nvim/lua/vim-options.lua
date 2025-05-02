@@ -38,7 +38,14 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "112"
+
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+})
 
 -- Vim Leader
 vim.g.mapleader = " "
