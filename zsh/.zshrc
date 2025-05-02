@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:/home/giorgi/.cargo/bin:/home/giorgi/.spicetify/"
+export PATH="$PATH:/home/giorgi/.cargo/bin:/home/giorgi/.config/composer/vendor/bin"
 
 # Theme
 ZSH_THEME="robbyrussell"
