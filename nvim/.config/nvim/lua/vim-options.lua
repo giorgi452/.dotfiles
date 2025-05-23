@@ -55,3 +55,4 @@ vim.g.maplocalleader = "\\"
 vim.keymap.set("n", "<Leader><Leader>", ":nohlsearch<CR>", { desc = "Clear search highlighting" })
 vim.keymap.set("n", "<Leader>ss", ":wa<CR>", { desc = "Save all files" })
 vim.keymap.set("n", "<Leader>n", ":Ex<CR>", { desc = "File Explorer" })
+

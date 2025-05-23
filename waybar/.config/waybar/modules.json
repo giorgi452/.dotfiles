@@ -2,27 +2,27 @@
     "custom/arch": {
         "format": "󰣇",
         "tooltip": true,
-        "tooltip-format": "btw"
+        "tooltip-format": "I use Arch BTW"
     },
-
 
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}",
+        "format": "{name}: {icon} ",
         "format-icons": {
             "urgent": "",
             "active": "",
             "default": ""
         }
     },
+
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon}{volume}%",
         "format-bluetooth": "{icon} {volume}%  {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}%",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -31,41 +31,63 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [" ", " ", " "]
         },
         "on-click": "amixer set Master toggle"
     },
+    
     "network": {
-        "format-wifi": "   {essid} ({signalStrength}%)",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-	    "on-click": "alacritty --hold -e nmtui" 
+        "format-wifi": "",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "⚠",
+	    "on-click": "ghostty -e nmtui" 
     },
+
     "hyprland/language": {
-       "format": "  {}",
-       "format-en": "EN",
-       "format-ge": "GE"
+        "format": " {}",
+        "format-en": "EN",
+        "format-ge": "GE"
     },
+
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon}  {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-alt": "{time}  {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format": "{icon}{capacity}%",
+        "format-full": "{icon}{capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "]
     },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}{percent}%",
+        "format-icons": [ "󰽤 ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "󰽢 "],
+        "on-scroll-up": "light -A 2",
+        "on-scroll-down": "light -U 2",
+        "scroll-step": 1.0
+    },
+
     "battery#bat2": {
         "bat": "BAT2"
     },
+
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true
+    },
+
+    "memory": {
+        "format": " {}%",
+    	"tooltip": true
+    },
+
     "clock": {
-        "format": "{:%H:%M | %e %B} ",
+        "format": "{:%H:%M | %e %B}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     }
-
 }

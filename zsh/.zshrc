@@ -22,7 +22,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-
 # fzf
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -32,6 +31,7 @@ export FZF_DEFAULT_OPTS=" \
 --color=border:#313244,label:#cdd6f4"
 source <(fzf --zsh)
 
+# History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -41,3 +41,13 @@ setopt appendhistory
 alias vim=nvim
 alias lf=yazi
 
+if [[ "$PWD" == "$HOME/work/kurochi-laravel" ]]; then
+    alias sail='./vendor/bin/sail'
+else
+    unalias sail 2>/dev/null
+fi
+
+if [[ "$TERM_PROGRAM" == "ghostty" && -z "$TMUX" ]]; then
+    tmux attach-session -t default || tmux new-session -s default
+    exit
+fi
