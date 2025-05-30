@@ -1,0 +1,59 @@
+# Window settings
+background-opacity = 0.95
+window-padding-x = 5
+window-padding-y = 10, 5
+title = "Terminal"
+macos-titlebar-style = transparent
+
+# Font settings
+font-size = 14.0
+font-family = "Hurmit Nerd Font"
+font-style = "Regular"
+font-family-bold = "Hurmit Nerd Font"
+font-style-bold = "Bold"
+font-family-italic = "Hurmit Nerd Font Mono"
+font-style-italic = "Italic"
+font-family-bold-italic = "Hurmit Nerd Font Mono"
+font-style-bold-italic = "Bold Italic"
+
+# Theme
+# Ghostty configuration file for Harmony Night theme
+
+background = #16161a
+foreground = #DCDFE4
+
+# Palette: colors 0-7 (normal)
+# shade1 (black)
+palette = 0=#212126
+# color1 (red)
+palette = 1=#f25c5c
+# color2 (green)
+palette = 2=#55b682
+# color3 (yellow)
+palette = 3=#ff9c6a
+# color4 (blue)
+palette = 4=#7aaaff
+# color5 (magenta)
+palette = 5=#f17ac6
+# color6 (cyan)
+palette = 6=#B87AFF
+# foreground (white)
+palette = 7=#DCDFE4
+
+# Palette: colors 8-15 (bright)
+# shade1
+palette = 8=#212126
+# shade2
+palette = 9=#2a2a30
+# shade3
+palette = 10=#373740
+# shade4
+palette = 11=#4f4f5c
+# foregroundSecondary
+palette = 12=#676778
+# foregroundTertiary
+palette = 13=#9595ab
+# backgroundSecondary
+palette = 14=#18181c
+# foreground
+palette = 15=#DCDFE4

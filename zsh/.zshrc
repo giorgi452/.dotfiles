@@ -40,6 +40,7 @@ setopt appendhistory
 # aliases
 alias vim=nvim
 alias lf=yazi
+alias gpreq=$HOME/.local/bin/git-push
 
 if [[ "$PWD" == "$HOME/work/kurochi-laravel" ]]; then
     alias sail='./vendor/bin/sail'
