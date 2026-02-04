@@ -1,31 +1,23 @@
 window {
-    margin: 0px;
-    border: 2px solid #00bfff;
-    background-color: rgba(10, 15, 20, 0.5);
-    border-radius: 10px;
+    margin: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(15, 20, 30, 0.35);          /* Very dark neutral base */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
 }
 
-#input {
-    margin: 5px;
+#outer-box {
+    margin: 10px;
     border: none;
-    color: #a9dfff;
-    background-color: rgba(16, 24, 32, 0.5);
-}
-
-#input:focus {
-    border: 1px solid #00bfff;
+    background: transparent;
 }
 
 #inner-box {
     margin: 5px;
     border: none;
-    background: none;
-}
-
-#outer-box {
-    margin: 5px;
-    border: none;
-    background-color: rgba(10, 15, 20, 0.5);
+    background: transparent;
 }
 
 #scroll {
@@ -33,13 +25,48 @@ window {
     border: none;
 }
 
-#text {
-    margin: 5px;
-    border: none;
-    color: #a9dfff;
+#input {
+    margin: 8px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #e5e5e5;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
 }
 
+#input:focus {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    outline: none;
+}
+
+#text {
+    margin: 5px 8px;
+    padding: 4px 0;
+    color: #e0e0e0;
+}
+
+#entry {
+    margin: 6px 8px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Liquid glass selected/highlighted entry */
 #entry:selected {
-    border-radius: 5px;
-    background-color: rgba(0, 224, 255, 0.5);
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        inset 0 2px 10px rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
 }

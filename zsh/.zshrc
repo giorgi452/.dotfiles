@@ -92,7 +92,7 @@ alias c='clear'
 
 # Conditional alias for sail
 sail_alias_update() {
-    if [[ "$PWD" == "$HOME/work/kurochi-laravel" || "$PWD" == "$HOME/work/gravion" || "$PWD" == "$HOME/work/cyber-clash" ]]; then
+    if [[ "$PWD" == "$HOME/work/kurochi/back" || "$PWD" == "$HOME/work/gravion" || "$PWD" == "$HOME/work/cyber-clash" || "$PWD" == "$HOME/work/aun/back" ]]; then
         alias sail='./vendor/bin/sail'
     else
         unalias sail 2>/dev/null
@@ -111,3 +111,6 @@ if [[ "$TERM_PROGRAM" == "ghostty" && -z "$TMUX" ]]; then
     tmux attach-session -t default || tmux new-session -s default
     exit
 fi
+
+# bun completions
+[ -s "/home/giorgi/.bun/_bun" ] && source "/home/giorgi/.bun/_bun"

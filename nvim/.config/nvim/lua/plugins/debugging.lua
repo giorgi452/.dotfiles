@@ -31,15 +31,6 @@ return {
                 dapui.close()
             end
 
-            dap.configurations.asm = {
-                type = "assembly",
-                request = "launch",
-                program = "${file}",
-                nasmPath = function()
-                    return "/usr/bin/nasm"
-                end,
-            }
-
             vim.keymap.set("n", "<leader>dt", function() dap.toggle_breakpoint() end, { desc = "Toggle Breakpoint" })
             vim.keymap.set("n", "<leader>dc", function() dap.continue() end, { desc = "Continue Debugging" })
             vim.keymap.set("n", "<leader>di", function() dap.step_into() end, { desc = "Step Into" })

@@ -16,10 +16,10 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-    background: rgba(25, 23, 36, 0.7);
+    background: rgba(25, 23, 36, 0.2);
     margin: 5px 5px 0px;
-    padding: 0 3px 0;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 15px;
     border: 2px solid #00bfff;
 }
 
@@ -28,7 +28,7 @@ window#waybar {
 }
 
 .modules-center {
-    padding: 0 10px;
+    padding: 0 15px;
 }
 
 #battery,
@@ -52,27 +52,6 @@ window#waybar {
     border-radius: 10px;
 }
 
-#battery:hover,
-#cpu:hover,
-#memory:hover,
-#disk:hover,
-#temperature:hover,
-#backlight:hover,
-#network:hover,
-#pulseaudio:hover,
-#wireplumber:hover,
-#custom-media:hover,
-#tray:hover,
-#mode:hover,
-#idle_inhibitor:hover,
-#scratchpad:hover,
-#power-profiles-daemon:hover,
-#language:hover,
-#mpd:hover {
-    background: rgba(26, 27, 38, 0.9);
-}
-
-
 #workspaces button {
     background: transparent;
     font-family:
@@ -86,11 +65,11 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background: #13131d;
+    background: rgba(12, 12, 12, 0.3);
 }
 
 #workspaces button:hover {
-    background: #11111b;
+    background: rgba(12, 12, 12, 0.3);
     color: #cdd6f4;
     box-shadow: none;
 }

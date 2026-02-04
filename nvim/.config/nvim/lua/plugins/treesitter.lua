@@ -17,6 +17,7 @@ return {
           "tsx",
           "php",
           "asm",
+          "rust"
         },
         highlight = { enable = true },
         indent = { enable = true },

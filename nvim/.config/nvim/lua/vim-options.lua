@@ -40,9 +40,16 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "112"
 
+vim.opt.spell = false
+vim.cmd("set nospell")
+
 vim.diagnostic.config({
-    virtual_text = true,
-    signs = true,
+    virtual_text = {
+        severity = { min = vim.diagnostic.severity.WARN },
+    },
+    signs = {
+        severity = { min = vim.diagnostic.severity.WARN },
+    },
     underline = true,
     update_in_insert = false,
 })
@@ -55,4 +62,3 @@ vim.g.maplocalleader = "\\"
 vim.keymap.set("n", "<Leader><Leader>", ":nohlsearch<CR>", { desc = "Clear search highlighting" })
 vim.keymap.set("n", "<Leader>ss", ":wa<CR>", { desc = "Save all files" })
 vim.keymap.set("n", "<Leader>n", ":Ex<CR>", { desc = "File Explorer" })
-
