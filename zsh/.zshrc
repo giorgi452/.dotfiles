@@ -35,6 +35,23 @@ setopt PROMPT_SUBST
 zinit ice lucid
 zinit snippet OMZT::robbyrussell
 
+# ls Theme
+if [[ -x /usr/bin/dircolors ]]; then
+    eval "$(dircolors -b <<EOF
+DIR 38;5;75
+EXEC 38;5;120
+*.tar 38;5;204
+*.gz 38;5;204
+*.zip 38;5;204
+*.png 38;5;219
+*.jpg 38;5;219
+*.mp4 38;5;171
+EOF
+)"
+fi
+
+alias ls='ls --color=auto --group-directories-first'
+
 # --- Completions & Fixes ---
 autoload -Uz compinit && compinit
 zinit cdreplay -q
@@ -80,3 +97,4 @@ fi
 # Aliases
 alias vim='nvim'
 alias c='clear'
+
