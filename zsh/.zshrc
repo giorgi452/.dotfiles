@@ -1,6 +1,7 @@
 # Exports
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-export STARSHIP_CONFIG="$HOME/.config/starship.toml"
+export GOPATH=$HOME/.config/go
+export COMPOSERPATH=$HOME/.config/composer
+export PATH="$PATH:$COMPOSERPATH/vendor/bin:$GOPATH/bin"
 export FZF_DEFAULT_OPTS="
     --height=99% 
     --layout=reverse 
@@ -34,12 +35,6 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Starship Theme
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
-
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -56,6 +51,7 @@ zinit snippet OMZP::command-not-found
 # Load completions
 autoload -Uz compinit && compinit
 autoload -U add-zsh-hook
+autoload -Uz vcs_info
 
 zinit cdreplay -q
 
@@ -85,14 +81,18 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='exa --icons -F -H --group-directories-first --git -1'
-alias cat="bat --paging=never"
 alias vim='nvim'
 alias c='clear'
 
 # Conditional alias for sail
 sail_alias_update() {
-    if [[ "$PWD" == "$HOME/work/kurochi/back" || "$PWD" == "$HOME/work/gravion" || "$PWD" == "$HOME/work/cyber-clash" || "$PWD" == "$HOME/work/aun/back" ]]; then
+    if [[
+        "$PWD" == "$HOME/work/kurochi/back"
+        || "$PWD" == "$HOME/work/gravion"
+        || "$PWD" == "$HOME/work/cyber-clash"
+        || "$PWD" == "$HOME/work/aun/back" 
+        || "$PWD" == "$HOME/work/spazieren-gehen"
+    ]]; then
         alias sail='./vendor/bin/sail'
     else
         unalias sail 2>/dev/null
@@ -104,7 +104,6 @@ sail_alias_update
 
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(starship init zsh)"
 
 # Auto-start tmux in Ghostty if not already in tmux
 if [[ "$TERM_PROGRAM" == "ghostty" && -z "$TMUX" ]]; then
@@ -114,3 +113,12 @@ fi
 
 # bun completions
 [ -s "/home/giorgi/.bun/_bun" ] && source "/home/giorgi/.bun/_bun"
+
+precmd() { vcs_info }
+
+zstyle ':vcs_info:git:*' formats ' (%b)'
+zstyle ':vcs_info:*' enable git
+
+setopt PROMPT_SUBST
+
+PROMPT='%F{green}%n@%m%f %F{blue}%~%f${vcs_info_msg_0_} %F{green}➜%f '
