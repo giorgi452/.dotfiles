@@ -81,8 +81,11 @@ sail_alias() {
         unalias sail 2>/dev/null
     fi
 }
+
 autoload -U add-zsh-hook
 add-zsh-hook chpwd sail_alias
+
+sail_alias
 
 # --- Prompt & Integrations ---
 eval "$(fzf --zsh)"

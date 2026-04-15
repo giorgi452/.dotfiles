@@ -42,4 +42,7 @@ return {
             },
         },
     },
+    cond = function()
+        return vim.fn.filereadable("artisan") == 1
+    end,
 }
