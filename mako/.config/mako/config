@@ -1,3 +1,8 @@
+# History
+max-history=50
+sort=-time
+layer=overlay
+
 # Liquid Glass Mako Theme
 font=Liberation Sans 11
 width=420
@@ -8,7 +13,7 @@ anchor=top-right
 default-timeout=5000
 border-size=2
 border-radius=8
-background-color=#0D1B2Aee
+background-color=#0D1B2Acc
 border-color=#64B5F699
 text-color=#E8F4F8
 progress-color=#00C0FFFF
